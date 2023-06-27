@@ -11,11 +11,12 @@ export const AddTransaction = () => {
     const newTransaction = {
       id: Math.floor(Math.random() * 10000000),
       text,
-      amount: Number(amount),
+      amount: parseFloat(amount),
     };
     addTransaction(newTransaction);
-    setText('')
-    setAmount(0)
+    // console.log(newTransaction)
+    setText('');
+    setAmount(0);
   };
 
   return (
@@ -40,9 +41,7 @@ export const AddTransaction = () => {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <button className='btn' >
-          Add transaction
-        </button>
+        <button className='btn'>Add transaction</button>
       </form>
     </div>
   );
